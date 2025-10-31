@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  username      String    @unique
+  firstName     String
+  lastName      String
+  role          String
+  avatar        String?
+  passwordHash  String
+  salt          String
+  isEmailVerified Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  lastLoginAt   DateTime? @updatedAt
+
+  passwordResetTokens PasswordResetToken[]
+}
+
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  expires   DateTime
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model Item {
+  id          String    @id @default(cuid())
+  name        String
+  category    String
+  dateAdded   DateTime  @default(now())
+  quantity    Int
+  status      String
+  expectedReturnDate DateTime? 
+  movements   Movement[]
+}
+
+model Movement {
+  movementId        String    @id @default(cuid())
+  timestamp         DateTime  @default(now())
+  type              String
+  itemId            String
+  itemName          String
+  handledBy         String
+  quantity          Int
+  expectedReturnDate DateTime?
+  actualReturnDate   DateTime?
+  status            String
+  item              Item      @relation(fields: [itemId], references: [id])
+}
+
+model Invitation {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  role        String
+  token       String   @unique
+  expiresAt   DateTime
+  createdAt   DateTime @default(now())
+  createdBy   String
+  used        Boolean  @default(false)
+  usedAt      DateTime?
+  usedBy      String?
+}
