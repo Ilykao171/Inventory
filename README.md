@@ -1,7 +1,13 @@
 # 🏪 Système de Gestion de Stock - Magasin Management
 
+[![Demo](https://img.shields.io/badge/Demo-Live-success?style=for-the-badge&logo=vercel)](https://magasin-management.vercel.app)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+
+> 🌐 **Démo en ligne :** [magasin-management.vercel.app](https://magasin-management.vercel.app)
+
 ## 📋 Table des Matières
 
+- [Démo en ligne](#-démo-en-ligne)
 - [Vue d'ensemble](#vue-densemble)
 - [Fonctionnalités principales](#fonctionnalités-principales)
 - [Technologies utilisées](#technologies-utilisées)
@@ -16,6 +22,27 @@
 - [Déploiement](#déploiement)
 - [Contribution](#contribution)
 - [Auteur](#auteur)
+
+
+---
+
+## 🌐 Démo en ligne
+
+### 🚀 Essayez l'application maintenant !
+
+**URL de démonstration :** [https://magasin-management.vercel.app](https://magasin-management.vercel.app)
+
+### 🔑 Comptes de test
+
+Connectez-vous avec l'un de ces comptes pour explorer les différents niveaux d'accès :
+
+| Rôle | Email | Mot de passe | Permissions |
+|------|-------|--------------|-------------|
+| **👑 Admin** | `admin@inventory.com` | `Admin123!` | Accès complet (gestion utilisateurs, analytics, configuration) |
+| **⚙️ Manager** | `manager@inventory.com` | `Manager123!` | Gestion complète des stocks et rapports |
+| **👤 User** | `user@inventory.com` | `User123!` | Consultation et enregistrement de mouvements |
+
+> 💡 **Astuce :** Testez chaque compte pour voir les différentes interfaces et permissions !
 
 ---
 
@@ -200,6 +227,8 @@ Pour ajouter des données de test :
 npm run seed
 ```
 
+Cela créera les comptes de démonstration mentionnés dans la section [Démo en ligne](#-démo-en-ligne).
+
 ---
 
 ## ▶️ Utilisation
@@ -211,6 +240,8 @@ npm run dev
 ```
 
 L'application sera accessible sur [http://localhost:3000](http://localhost:3000)
+
+> � **Vous voulez juste tester l'application ?** Rendez-vous sur la [démo en ligne](https://magasin-management.vercel.app) !
 
 ### Build de production
 
