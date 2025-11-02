@@ -598,7 +598,6 @@ Permission est accordée, gratuitement, à toute personne obtenant une copie de 
 
 Pour toute question ou problème :
 - Ouvrir une **issue** sur GitHub
-- Contacter l'équipe de développement
 
 ---
 
